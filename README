@@ -13,7 +13,7 @@ The 'database' function is a page that display the current amount of tables in t
 Information before running application:
 _______________________________________________________________________________________________________________________________
 
-Relevant Files: app.py, database_accessor.py, db_data_return.py and shortcuts.py
+Relevant Files: app.py, database_accessor.py, db_data_return.py, inputs.py and shortcuts.py
 
 This application was made using Python 3.7.
 Python Libraries required: tkinter 8.6, mysql.connector 8.0.16 
@@ -23,12 +23,12 @@ mySQL Version: 8.0
 A user for the database will need to be created.
 This application requires a premade database with the settings set as:
 	
-	Host: localhost
-	Database Name: test1 
+	Host: _____ (eg. localhost)
+	Database Name: _________ 
 	User: ______
 	Password:_______
 	
-	The above can be altered to preference in the code. It is contained in file database_accessor.py and database_data_return.py.
+	The above can be altered to preference in the code. It is contained in file inputs.py.
 
 	A table must be created with the name 'Setup' but name can be changed as long as the respective code is changed in database_accessor.py and database_data_return.py.
 
@@ -48,5 +48,8 @@ This application requires a premade database with the settings set as:
 
 	Any alterations to the above should be cross-checked with database_accessor.py, database_data_return.py and app.py.
 
-****in app.py, a file directory for the background image of the display is stated on lines 22 and 50
+**app-backup.py is a copy of app.py and has no functionality within the executable
+**any changes to app.py will not change app-backup.py vice versa
+
+****a file directory for the background image of the display is stated inside inputs.py
     please change this directory to the preferred background
