@@ -89,7 +89,7 @@ class db_caller :
 		return s1string + s2string + s3string
 	def db_setup_coords(self):
 		global data_hold2
-		data_hold2 = [[],[],[],[],[],[]]
+		data_hold2 = [[],[],[],[],[],[],[],[]]
 		dbdr.dbdr(1)
 		for dbdr.row in dbdr.location:
 		 data_hold2[0].append(dbdr.row[4]) #x1
@@ -98,4 +98,6 @@ class db_caller :
 		 data_hold2[3].append(dbdr.row[7]) #y2
 		 data_hold2[4].append(dbdr.row[3]) #shape
 		 data_hold2[5].append(dbdr.row[0]) #name
+		 data_hold2[6].append(dbdr.row[1]) #Id
+		 data_hold2[7].append(dbdr.row[8]) #Occupancy
 		return data_hold2

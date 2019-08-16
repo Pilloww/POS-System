@@ -1,15 +1,15 @@
 import mysql.connector
 from mysql.connector import Error
 from mysql.connector import errorcode
-
+from inputs import inputs
 #function that inserts newly drawn tables into database
 def ts_insert(Id, Split, Shape, x1, y1, x2, y2, Occupancy, Max_Seating, Current_Seated):
-
+  user_data = inputs()
   try:
-     conn = mysql.connector.connect(host='localhost',
-                               database='test1',
-                               user='',      #input username between quotations
-                               password='')  #input password between quotations 
+     conn = mysql.connector.connect(host=user_data.Host,
+                               database=user_data.Database,
+                               user=user_data.Username,      #input username between quotations
+                               password=user_data.Password)  #input password between quotations 
      cursor = conn.cursor()
 
 #Insertion
@@ -31,12 +31,12 @@ def ts_insert(Id, Split, Shape, x1, y1, x2, y2, Occupancy, Max_Seating, Current_
   		print("Connection is Closed")
 #function that updates the table data in database
 def ts_update(x1, y1, x2, y2, Id, Split, Occupancy, Max_Seating, Current_Seated):
-
+  user_data = inputs()
   try:
-     conn = mysql.connector.connect(host='localhost',
-                               database='test1',
-                               user='',           #input username between quotations
-                               password='')       #input password between quotations
+     conn = mysql.connector.connect(host=user_data.Host,
+                               database=user_data.Database,
+                               user=user_data.Username,           #input username between quotations
+                               password=user_data.Password)       #input password between quotations
      cursor = conn.cursor()
 
 #Update 
@@ -62,12 +62,12 @@ def ts_update(x1, y1, x2, y2, Id, Split, Occupancy, Max_Seating, Current_Seated)
           print("Connection is Closed")
 #function that updates table location
 def move_update(x1, y1, x2, y2, Name):
-
+  user_data = inputs()
   try:
-     conn = mysql.connector.connect(host='localhost',
-                               database='test1',
-                               user='',                 #input username between quotations
-                               password='')             #input password between quotations
+     conn = mysql.connector.connect(host=user_data.Host,
+                               database=user_data.Database,
+                               user=user_data.Username,                 #input username between quotations
+                               password=user_data.Password)             #input password between quotations
      cursor = conn.cursor()
 
 #Update 
@@ -86,11 +86,12 @@ def move_update(x1, y1, x2, y2, Name):
           print("Connection is Closed")
 #function that deletes table from database
 def ts_delete(self, x1, y1, x2, y2):
+  user_data = inputs()
   try:
-     conn = mysql.connector.connect(host='localhost',
-                               database='test1',
-                               user='',                 #input username between quotations
-                               password='')             #input password between quotations
+     conn = mysql.connector.connect(host=user_data.Host,
+                               database=user_data.Database,
+                               user=user_data.Username,                 #input username between quotations
+                               password=user_data.Password)             #input password between quotations
      cursor = conn.cursor()
 
 #Deletion
